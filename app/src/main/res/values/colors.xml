@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="discord_dark">#2C2F33</color>
+    <color name="discord_light">#7289DA</color>
+    <color name="discord_lighter">#99AAB5</color>
+    <color name="discord_lightest">#E6E8EC</color>
+    <color name="discord_text">#FFFFFF</color>
+    <color name="discord_text_dark">#B9BBBE</color>
+    <color name="discord_text_darker">#72767D</color>
+    <color name="colorPrimary">#24253a</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="red">#FF0000</color>
+    <color name="green">#00FF00</color>
+    <color name="blue">#0000FF</color>
+
+    <color name="customColor">#FF5722</color>
+    <color name="discord_gray_dark">#36393f</color>
+    <color name="discord_gray_darker">#2f3136</color>
+    <color name="discord_blue">#7289da</color>
+    <color name="discord_blue_dark">#4a5f8d</color>
+    <color name="discord_white">#ffffff</color>
+    <color name="discord_black">#000000</color>
+</resources>

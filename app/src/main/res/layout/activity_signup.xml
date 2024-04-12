@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#24253a">
+
+    <!-- Add TextView outside the customized view -->
+    <TextView
+        android:id="@+id/textWelcomeMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:text="Welcome to our application"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:gravity="center" />
+
+
+    <!-- Add TextView for the additional text -->
+    <TextView
+        android:id="@+id/textAdditionalMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textWelcomeMessage"
+        android:layout_marginTop="16dp"
+        android:text="Enjoy downloading thousands of wallpapers with us."
+        android:textColor="#D8D9DE"
+        android:textSize="12sp"
+        android:gravity="center" />
+
+    <RelativeLayout
+        android:id="@+id/rlContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/textWelcomeMessage"> <!-- Align below the welcome message -->
+
+        <!-- Add a view for elevation and background -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"
+            android:background="@drawable/rounded_background"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:elevation="8dp"
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/imageViewLogo"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/logo" />
+
+            <!-- Your other views (EditTexts, Button, TextView) here -->
+
+            <EditText
+                android:id="@+id/editTextEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/imageViewLogo"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:textColor="#FFFFFF" /> <!-- Set text color to white -->
+
+            <EditText
+                android:id="@+id/editTextPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editTextEmail"
+                android:layout_marginTop="16dp"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:textColor="#FFFFFF" /> <!-- Set text color to white -->
+
+            <Button
+                android:id="@+id/buttonSignup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editTextPassword"
+                android:layout_marginTop="24dp"
+                android:backgroundTint="@android:color/white"
+                android:text="Sign Up"
+                android:textColor="@color/colorPrimary" /> <!-- Set background to white -->
+
+            <Button
+                android:id="@+id/buttonAlreadyUserLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/buttonSignup"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:background="@android:color/transparent"
+                android:text="Already User? Login"
+                android:textColor="@color/colorPrimary" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

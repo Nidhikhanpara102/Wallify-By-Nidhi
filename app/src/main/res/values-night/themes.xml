@@ -1,0 +1,19 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="MyCustomTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/discord_gray_dark</item>
+        <item name="colorPrimaryVariant">@color/discord_gray_darker</item>
+        <item name="colorOnPrimary">@color/discord_white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/discord_blue</item>
+        <item name="colorSecondaryVariant">@color/discord_blue_dark</item>
+        <item name="colorOnSecondary">@color/discord_white</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <!-- Navigation bar color. -->
+        <item name="android:navigationBarColor">?attr/colorPrimaryVariant</item>
+
+        <item name="android:fontFamily">@font/discord_sans</item>
+    </style>
+</resources>

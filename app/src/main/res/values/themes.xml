@@ -1,0 +1,20 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="MyCustomTheme" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/discord_light</item>
+        <item name="colorPrimaryVariant">@color/discord_dark</item>
+        <item name="colorOnPrimary">@color/discord_text</item>
+
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/discord_lighter</item>
+        <item name="colorSecondaryVariant">@color/discord_dark</item>
+        <item name="colorOnSecondary">@color/discord_text</item>
+
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+
+
+        <item name="android:fontFamily">@font/discord_sans</item>
+    </style>
+</resources>
