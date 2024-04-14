@@ -29,6 +29,8 @@ public class MainActivity extends AppCompatActivity implements OnRecyclerClickLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        manager = new WallpaperResponseManager(this);
+        manager.getCuratedWallpapers(listener, "1");
     }
     private final CuratedResponseListener listener = new CuratedResponseListener() {
         @Override
