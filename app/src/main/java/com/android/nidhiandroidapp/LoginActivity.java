@@ -4,16 +4,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.view.animation.AlphaAnimation;
-import android.view.animation.Animation;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -39,11 +39,10 @@ public class LoginActivity extends AppCompatActivity {
         textViewResetPassword = findViewById(R.id.textViewResetPassword);
         ImageView imageViewLogo = findViewById(R.id.imageViewLogo);
 
-
         TextView textWelcome = findViewById(R.id.textWelcomeMessage);
         TextView textAdditional = findViewById(R.id.textAdditionalMessage);
 
-        //Add animation
+        // Add animation
         Animation animationWelcome = new AlphaAnimation(0.0f, 1.0f);
         animationWelcome.setDuration(1000);
         textWelcome.startAnimation(animationWelcome);
@@ -52,7 +51,6 @@ public class LoginActivity extends AppCompatActivity {
         animationAdditional.setDuration(1000);
         animationAdditional.setStartOffset(500);
         textAdditional.startAnimation(animationAdditional);
-
 
         Animation animationLogo = new AlphaAnimation(0.0f, 1.0f);
         animationLogo.setDuration(1000);
@@ -74,18 +72,18 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-    //logon user function to check authorization
+    // Logon user function to check authorization
     private void loginUser() {
         String email = editTextEmail.getText().toString().trim();
         String password = editTextPassword.getText().toString().trim();
 
         if (TextUtils.isEmpty(email)) {
-            Toast.makeText(this, "Please enter your email", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.login_hint_email, Toast.LENGTH_SHORT).show();
             return;
         }
 
         if (TextUtils.isEmpty(password)) {
-            Toast.makeText(this, "Please enter your password", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.login_hint_password, Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -94,23 +92,23 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task task) {
                         if (task.isSuccessful()) {
-                            Toast.makeText(LoginActivity.this, "Login successful", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, R.string.login_successful, Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(LoginActivity.this, MainActivity.class));
                             // Close LoginActivity
                             finish();
                         } else {
-                            Toast.makeText(LoginActivity.this, "Login failed: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, getString(R.string.login_failed, task.getException().getMessage()), Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
     }
 
-    //Reset password function with authentication
+    // Reset password function with authentication
     private void resetPassword() {
         String email = editTextEmail.getText().toString().trim();
 
         if (TextUtils.isEmpty(email)) {
-            Toast.makeText(this, "Please enter your email to reset password", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.reset_password_hint, Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -119,15 +117,16 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()) {
-                            Toast.makeText(LoginActivity.this, "Password reset email sent", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, R.string.password_reset_email_sent, Toast.LENGTH_SHORT).show();
                         } else {
-                            Toast.makeText(LoginActivity.this, "Failed to send password reset email: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, getString(R.string.password_reset_failed, task.getException().getMessage()), Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
     }
+
+    @Override
+    public void onBackPressed() {
+        finishAffinity();
+    }
 }
-
-
-
-

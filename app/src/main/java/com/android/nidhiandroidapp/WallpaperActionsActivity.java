@@ -62,7 +62,7 @@ public class WallpaperActionsActivity extends AppCompatActivity {
             @Override
             public void onError(Exception e) {
                 e.printStackTrace();
-                Toast.makeText(WallpaperActionsActivity.this, "Failed to load Image!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(WallpaperActionsActivity.this, R.string.failed_to_load_image, Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -99,7 +99,7 @@ public class WallpaperActionsActivity extends AppCompatActivity {
 
         downloadManager.enqueue(request);
 
-        Toast.makeText(WallpaperActionsActivity.this, "Download Completed!", Toast.LENGTH_SHORT).show();
+        Toast.makeText(WallpaperActionsActivity.this, R.string.download_completed, Toast.LENGTH_SHORT).show();
 
     }
 
@@ -109,24 +109,24 @@ public class WallpaperActionsActivity extends AppCompatActivity {
         Bitmap bitmap = ((BitmapDrawable) imageView_wallpaper.getDrawable()).getBitmap();
 
         AlertDialog.Builder builder = new AlertDialog.Builder(WallpaperActionsActivity.this);
-        builder.setTitle("Set As");
+        builder.setTitle(R.string.set_as);
         builder.setItems(new CharSequence[]{"Home Screen", "Lock Screen", "Both"}, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 try {
                     if (which == 0) {
                         wallpaperManager.setBitmap(bitmap, null, true, WallpaperManager.FLAG_SYSTEM);
-                        Toast.makeText(WallpaperActionsActivity.this, "Wallpaper set as Home Screen!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(WallpaperActionsActivity.this,  R.string.wallpaper_set_home, Toast.LENGTH_SHORT).show();
                     } else if (which == 1) {
                         wallpaperManager.setBitmap(bitmap, null, true, WallpaperManager.FLAG_LOCK);
-                        Toast.makeText(WallpaperActionsActivity.this, "Wallpaper set as Lock Screen!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(WallpaperActionsActivity.this, R.string.wallpaper_set_lock, Toast.LENGTH_SHORT).show();
                     } else {
                         wallpaperManager.setBitmap(bitmap);
-                        Toast.makeText(WallpaperActionsActivity.this, "Wallpaper set as Both Home and Lock Screen!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(WallpaperActionsActivity.this, R.string.wallpaper_set_both, Toast.LENGTH_SHORT).show();
                     }
                 } catch (IOException e) {
                     e.printStackTrace();
-                    Toast.makeText(WallpaperActionsActivity.this, "Something went wrong...! Couldn't set wallpaper!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(WallpaperActionsActivity.this, R.string.something_went_wrong, Toast.LENGTH_SHORT).show();
                 }
             }
         });

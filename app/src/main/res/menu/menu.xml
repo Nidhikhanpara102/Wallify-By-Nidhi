@@ -9,4 +9,7 @@
         app:actionViewClass="androidx.appcompat.widget.SearchView"
         app:showAsAction="ifRoom|collapseActionView"/>
 
+    <item android:id="@+id/action_logout"
+        android:title="Logout"/>
+
 </menu>

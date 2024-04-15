@@ -1,3 +1,38 @@
 <resources>
     <string name="app_name">Wallify</string>
+
+    <string name="login_hint_email">Please enter your email</string>
+    <string name="login_hint_password">Please enter your password</string>
+    <string name="login_failed">Login failed: %s</string>
+    <string name="login_successful">Login successful</string>
+    <string name="reset_password_hint">Please enter your email to reset password</string>
+    <string name="password_reset_email_sent">Password reset email sent</string>
+    <string name="password_reset_failed">Failed to send password reset email: %s</string>
+
+    <string name="loading_message">Loading...</string>
+    <string name="no_image_found">No Image Found!</string>
+    <string name="no_image_search">No image found!!</string>
+    <string name="search_hint">Type here to search...</string>
+    <string name="logged_out">Logged out</string>
+
+    <string name="email_required">Email is required</string>
+    <string name="password_required">Password is required</string>
+    <string name="signup_successful">Signup successful</string>
+    <string name="signup_failed">Signup failed: %s</string>
+
+    <string name="failed_to_load_image">Failed to load Image!</string>
+    <string name="download_completed">Download Completed!</string>
+    <string name="set_as">Set As</string>
+    <string name="home_screen">Home Screen</string>
+    <string name="lock_screen">Lock Screen</string>
+    <string name="both">Both</string>
+    <string name="wallpaper_set_home">Wallpaper set as Home Screen!</string>
+    <string name="wallpaper_set_lock">Wallpaper set as Lock Screen!</string>
+    <string name="wallpaper_set_both">Wallpaper set as Both Home and Lock Screen!</string>
+    <string name="something_went_wrong">Something went wrong...! Couldn\'t set wallpaper!</string>
+    <string name="wallpaper_title">Wallpaper_%s</string>
+
+    <string name="error_occurred">An error occurred!</string>
+
+
 </resources>

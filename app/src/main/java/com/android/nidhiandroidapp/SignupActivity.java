@@ -40,12 +40,12 @@ public class SignupActivity extends AppCompatActivity {
 
                 // Check if email or password fields are empty
                 if (TextUtils.isEmpty(email)) {
-                    editTextEmail.setError("Email is required");
+                    editTextEmail.setError(getString(R.string.email_required));
                     return;
                 }
 
                 if (TextUtils.isEmpty(password)) {
-                    editTextPassword.setError("Password is required");
+                    editTextPassword.setError(getString(R.string.password_required));
                     return;
                 }
 
@@ -55,12 +55,12 @@ public class SignupActivity extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task task) {
                                 if (task.isSuccessful()) {
-                                    Toast.makeText(SignupActivity.this, "Signup successful", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(SignupActivity.this, R.string.signup_successful, Toast.LENGTH_SHORT).show();
                                     startActivity(new Intent(SignupActivity.this, MainActivity.class));
                                     // Close SignupActivity
                                     finish();
                                 } else {
-                                    Toast.makeText(SignupActivity.this, "Signup failed: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(SignupActivity.this, getString(R.string.signup_failed, task.getException().getMessage()), Toast.LENGTH_SHORT).show();
                                 }
                             }
                         });

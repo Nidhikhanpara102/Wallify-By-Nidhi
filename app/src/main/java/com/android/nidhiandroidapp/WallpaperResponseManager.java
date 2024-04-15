@@ -4,7 +4,9 @@ import android.content.Context;
 import android.widget.Toast;
 
 import com.android.nidhiandroidapp.Listeners.CuratedResponseListener;
+import com.android.nidhiandroidapp.Listeners.SearchResponseListener;
 import com.android.nidhiandroidapp.Models.APIResponse;
+import com.android.nidhiandroidapp.Models.SearchApiResponse;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -32,7 +34,7 @@ public class WallpaperResponseManager {
             @Override
             public void onResponse(Call<APIResponse> call, Response<APIResponse> response) {
                 if (!response.isSuccessful()){
-                    Toast.makeText(context, "An Error Occured!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, R.string.error_occurred, Toast.LENGTH_SHORT).show();
                     return;
                 }
                 listener.onFetch(response.body(), response.message());
@@ -40,6 +42,26 @@ public class WallpaperResponseManager {
 
             @Override
             public void onFailure(Call<APIResponse> call, Throwable t) {
+                listener.onError(t.getMessage());
+            }
+        });
+    }
+
+    public void searchCuratedWallpapers(SearchResponseListener listener, String page, String query){
+        CallWallpaperListSeaarch callWallpaperListSeaarch = retrofit.create(CallWallpaperListSeaarch.class);
+        Call<SearchApiResponse> call = callWallpaperListSeaarch.searchWallpapers(query, page, "20");
+        call.enqueue(new Callback<SearchApiResponse>() {
+            @Override
+            public void onResponse(Call<SearchApiResponse> call, Response<SearchApiResponse> response) {
+                if (!response.isSuccessful()){
+                    Toast.makeText(context, R.string.error_occurred, Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                listener.onFetch(response.body(), response.message());
+            }
+
+            @Override
+            public void onFailure(Call<SearchApiResponse> call, Throwable t) {
                 listener.onError(t.getMessage());
             }
         });
@@ -57,4 +79,16 @@ public class WallpaperResponseManager {
         );
     }
 
+    private interface CallWallpaperListSeaarch {
+        @Headers({
+                "Accept: application/json",
+                "Authorization: yniudTczqlsB54ZqOMEfwhAW986hk3GLczgVbmlwBjNBT9uyTiRC9w4a"
+        })
+        @GET("search")
+        Call<SearchApiResponse> searchWallpapers(
+                @Query("query") String query,
+                @Query("page") String page,
+                @Query("per_page") String per_page
+        );
+    }
 }

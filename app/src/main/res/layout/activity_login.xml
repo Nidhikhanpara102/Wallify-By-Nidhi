@@ -5,19 +5,16 @@
     android:layout_height="match_parent"
     android:background="#24253a">
 
-    <!-- Add TextView outside the customized view -->
     <TextView
         android:id="@+id/textWelcomeMessage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="200dp"
-        android:text="Welcome to our application"
+        android:text="Welcome to Wallify"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
         android:gravity="center" />
 
-
-    <!-- Add TextView for the additional text -->
     <TextView
         android:id="@+id/textAdditionalMessage"
         android:layout_width="match_parent"
@@ -33,7 +30,7 @@
         android:id="@+id/rlContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/textWelcomeMessage"> <!-- Align below the welcome message -->
+        android:layout_below="@id/textWelcomeMessage"> >
 
         <!-- Add a view for elevation and background -->
         <RelativeLayout
@@ -54,7 +51,6 @@
                 android:layout_centerHorizontal="true"
                 android:src="@drawable/logo" />
 
-            <!-- Your other views (EditTexts, Button, TextView) here -->
 
             <EditText
                 android:id="@+id/editTextEmail"
@@ -63,7 +59,7 @@
                 android:layout_below="@id/imageViewLogo"
                 android:hint="Email"
                 android:inputType="textEmailAddress"
-                android:textColor="#FFFFFF" /> <!-- Set text color to white -->
+                android:textColor="#FFFFFF" />
 
             <EditText
                 android:id="@+id/editTextPassword"
@@ -73,7 +69,7 @@
                 android:layout_marginTop="16dp"
                 android:hint="Password"
                 android:inputType="textPassword"
-                android:textColor="#FFFFFF" /> <!-- Set text color to white -->
+                android:textColor="#FFFFFF" />
 
             <Button
                 android:id="@+id/buttonLogin"
@@ -83,7 +79,7 @@
                 android:layout_marginTop="24dp"
                 android:backgroundTint="@android:color/white"
                 android:text="Login"
-                android:textColor="@color/colorPrimary" /> <!-- Set background to white -->
+                android:textColor="@color/colorPrimary" />
 
             <TextView
                 android:id="@+id/textViewResetPassword"
@@ -97,7 +93,7 @@
                 android:onClick="resetPasswordClicked"
                 android:text="Forgot your password?"
                 android:textColor="#FFFFFF"
-                android:textStyle="italic" /> <!-- Set text color to white -->
+                android:textStyle="italic" />
         </RelativeLayout>
     </RelativeLayout>
 
