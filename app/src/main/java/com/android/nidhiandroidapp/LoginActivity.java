@@ -72,7 +72,7 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-    // Logon user function to check authorization
+    // Login user function to check authorization
     private void loginUser() {
         String email = editTextEmail.getText().toString().trim();
         String password = editTextPassword.getText().toString().trim();
@@ -94,6 +94,7 @@ public class LoginActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             Toast.makeText(LoginActivity.this, R.string.login_successful, Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                            Toast.makeText(LoginActivity.this, "Thank you for choosing Wallify!", Toast.LENGTH_SHORT).show();
                             // Close LoginActivity
                             finish();
                         } else {

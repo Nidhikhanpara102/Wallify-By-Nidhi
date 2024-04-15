@@ -57,6 +57,7 @@
                 android:layout_below="@id/imageViewLogo"
                 android:hint="Email"
                 android:inputType="textEmailAddress"
+                style="@style/EditTextStyle"
                 android:textColor="#FFFFFF" />
 
             <EditText
@@ -66,6 +67,7 @@
                 android:layout_below="@id/editTextEmail"
                 android:layout_marginTop="16dp"
                 android:hint="Password"
+                style="@style/EditTextStyle"
                 android:inputType="textPassword"
                 android:textColor="#FFFFFF" />
 

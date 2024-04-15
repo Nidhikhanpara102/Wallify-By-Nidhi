@@ -58,6 +58,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/imageViewLogo"
                 android:hint="Email"
+                style="@style/EditTextStyle"
                 android:inputType="textEmailAddress"
                 android:textColor="#FFFFFF" />
 
@@ -68,6 +69,7 @@
                 android:layout_below="@id/editTextEmail"
                 android:layout_marginTop="16dp"
                 android:hint="Password"
+                style="@style/EditTextStyle"
                 android:inputType="textPassword"
                 android:textColor="#FFFFFF" />
 

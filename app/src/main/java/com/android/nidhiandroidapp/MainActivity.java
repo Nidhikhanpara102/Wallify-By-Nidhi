@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity implements OnRecyclerClickLi
         manager = new WallpaperResponseManager(this);
         manager.getCuratedWallpapers(listener, "1");
     }
-
+// Check if the image is found or not and if images are there it will show the data
     private final CuratedResponseListener listener = new CuratedResponseListener() {
         @Override
         public void onFetch(APIResponse response, String message) {
@@ -61,6 +61,7 @@ public class MainActivity extends AppCompatActivity implements OnRecyclerClickLi
         }
     };
 
+    //Display images
     private void showData(ArrayList<Photo> photos) {
         recyclerView_home = findViewById(R.id.recycler_home);
         recyclerView_home.setHasFixedSize(true);
@@ -70,6 +71,7 @@ public class MainActivity extends AppCompatActivity implements OnRecyclerClickLi
         progressBar.setVisibility(View.GONE);
     }
 
+    //Navigate to wallpaper actions activity with the data of selected images (Photo model)
     @Override
     public void onClick(Photo photo) {
         startActivity(new Intent(MainActivity.this, WallpaperActionsActivity.class)
@@ -97,7 +99,7 @@ public class MainActivity extends AppCompatActivity implements OnRecyclerClickLi
         });
         return super.onCreateOptionsMenu(menu);
     }
-
+//CHeck if the image is found or not and display the data accordingly
     private final SearchResponseListener searchResponseListener = new SearchResponseListener() {
         @Override
         public void onFetch(SearchApiResponse response, String message) {
@@ -128,6 +130,7 @@ public class MainActivity extends AppCompatActivity implements OnRecyclerClickLi
         return super.onOptionsItemSelected(item);
     }
 
+    //Loged out user
     private void logoutUser() {
         Toast.makeText(this, R.string.logged_out, Toast.LENGTH_SHORT).show();
         startActivity(new Intent(MainActivity.this, LoginActivity.class));

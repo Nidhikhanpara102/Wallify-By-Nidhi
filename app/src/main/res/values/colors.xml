@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="colorPrimary">#24253a</color>
     <color name="discord_dark">#2C2F33</color>
     <color name="discord_light">#7289DA</color>
     <color name="discord_lighter">#99AAB5</color>
@@ -7,7 +8,6 @@
     <color name="discord_text">#FFFFFF</color>
     <color name="discord_text_dark">#B9BBBE</color>
     <color name="discord_text_darker">#72767D</color>
-    <color name="colorPrimary">#24253a</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
 

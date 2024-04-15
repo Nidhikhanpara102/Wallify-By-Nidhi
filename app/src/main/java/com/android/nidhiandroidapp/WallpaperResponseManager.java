@@ -29,7 +29,7 @@ public class WallpaperResponseManager {
     }
     public void getCuratedWallpapers(CuratedResponseListener listener, String page){
         CallWallpaperList callWallpaperList = retrofit.create(CallWallpaperList.class);
-        Call<APIResponse> call = callWallpaperList.getWallpapers(page, "10");
+        Call<APIResponse> call = callWallpaperList.getWallpapers(page, "50");
         call.enqueue(new Callback<APIResponse>() {
             @Override
             public void onResponse(Call<APIResponse> call, Response<APIResponse> response) {
@@ -46,7 +46,7 @@ public class WallpaperResponseManager {
             }
         });
     }
-
+// Search wallpaper mathod
     public void searchCuratedWallpapers(SearchResponseListener listener, String page, String query){
         CallWallpaperListSeaarch callWallpaperListSeaarch = retrofit.create(CallWallpaperListSeaarch.class);
         Call<SearchApiResponse> call = callWallpaperListSeaarch.searchWallpapers(query, page, "20");
@@ -67,6 +67,7 @@ public class WallpaperResponseManager {
         });
     }
 
+    // Call list of wallpapers
     private interface CallWallpaperList {
         @Headers({
                 "Accept: application/json",
@@ -78,7 +79,7 @@ public class WallpaperResponseManager {
                 @Query("per_page") String per_page
         );
     }
-
+// for searched wallpaper list
     private interface CallWallpaperListSeaarch {
         @Headers({
                 "Accept: application/json",

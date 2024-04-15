@@ -10,6 +10,8 @@
         app:showAsAction="ifRoom|collapseActionView"/>
 
     <item android:id="@+id/action_logout"
-        android:title="Logout"/>
+        android:title="Logout"
+        style="@style/EditTextStyleBold"
+        />
 
 </menu>

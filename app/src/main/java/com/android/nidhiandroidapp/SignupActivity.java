@@ -4,8 +4,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -31,6 +35,27 @@ public class SignupActivity extends AppCompatActivity {
         editTextPassword = findViewById(R.id.editTextPassword);
         buttonSignup = findViewById(R.id.buttonSignup);
         buttonAlreadyUserLogin = findViewById(R.id.buttonAlreadyUserLogin);
+
+        ImageView imageViewLogo = findViewById(R.id.imageViewLogo);
+
+        TextView textWelcome = findViewById(R.id.textWelcomeMessage);
+        TextView textAdditional = findViewById(R.id.textAdditionalMessage);
+
+        // Add animation
+        Animation animationWelcome = new AlphaAnimation(0.0f, 1.0f);
+        animationWelcome.setDuration(1000);
+        textWelcome.startAnimation(animationWelcome);
+
+        Animation animationAdditional = new AlphaAnimation(0.0f, 1.0f);
+        animationAdditional.setDuration(1000);
+        animationAdditional.setStartOffset(500);
+        textAdditional.startAnimation(animationAdditional);
+
+        Animation animationLogo = new AlphaAnimation(0.0f, 1.0f);
+        animationLogo.setDuration(1000);
+        animationLogo.setStartOffset(1000);
+        imageViewLogo.startAnimation(animationLogo);
+
 
         buttonSignup.setOnClickListener(new View.OnClickListener() {
             @Override
